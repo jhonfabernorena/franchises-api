@@ -25,7 +25,7 @@ public class VendorService {
     }
     
     public Vendor createVendor(Integer franchiseId, Vendor vendor) {
-        return franchiseService.getfranchiseById(franchiseId)
+        return franchiseService.getFranchiseById(franchiseId)
             .map(franchise -> {
                 vendor.setFranchise(franchise);
                 vendor.getProducts().forEach(product -> {product.setVendor(vendor);});

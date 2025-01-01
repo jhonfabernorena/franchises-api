@@ -1,6 +1,7 @@
 package com.example.franquiciasapi.controller;
 
 import com.example.franquiciasapi.entity.Franchise;
+import com.example.franquiciasapi.entity.Vendor;
 import com.example.franquiciasapi.service.FranchiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,13 @@ public class FranchisesController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Franchise> getFranquiciaById(@PathVariable Integer id) {
-        ResponseEntity.ok(franchiseService.getfranchiseById(id));
+        ResponseEntity.ok(franchiseService.getFranchiseById(id));
                 return null;
+    }
+
+    
+    @GetMapping("/stock/{id}")
+    public ResponseEntity<List<Vendor>> getHigherStockProductsByFranchise(@PathVariable Integer id) {
+        return ResponseEntity.ok(franchiseService.findHigherStockProductsByFranchise(id));
     }
 }

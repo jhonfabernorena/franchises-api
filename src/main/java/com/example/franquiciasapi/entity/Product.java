@@ -1,6 +1,9 @@
 package com.example.franquiciasapi.entity;
 
 import lombok.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -19,5 +22,6 @@ public class Product {
     private Integer stock;
     @ManyToOne()
     @JoinColumn(name = "p_vendor_id")
+    @JsonIgnoreProperties("products")
     private Vendor vendor;
 }
