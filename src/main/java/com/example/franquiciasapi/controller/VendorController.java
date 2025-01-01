@@ -15,7 +15,7 @@ public class VendorController {
     @Autowired
     private VendorService vendorService;
 
-    @PostMapping("/{franquiciaId}")
+    @PostMapping("/{franchiseId}")
     public ResponseEntity<Vendor> addVendor(@PathVariable Integer franchiseId, @RequestBody Vendor vendor) {
         return ResponseEntity.ok(vendorService.createVendor(franchiseId, vendor));
     }

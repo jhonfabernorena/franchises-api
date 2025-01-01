@@ -22,6 +22,7 @@ public class VendorService {
         return franchiseService.getfranchiseById(franchiseId)
             .map(franchise -> {
                 vendor.setFranchise(franchise);
+                vendor.getProducts().forEach(product -> {product.setVendor(vendor);});
                 return vendorRepository.save(vendor);})
             .orElseThrow(() -> new ResourceNotFoundException("Franquicia no encontrada"));
     }

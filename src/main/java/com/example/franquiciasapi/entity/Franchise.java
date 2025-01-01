@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -18,5 +20,6 @@ public class Franchise {
     @Column(name = "f_name", nullable = false)
     private String name;
     @OneToMany(mappedBy = "franchise", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("franchise")
     private List<Vendor> vendors;
 }
