@@ -17,10 +17,18 @@ API developed with Spring Boot 3.4.1 to manage franchises, vendors, and products
 Edit the `application.properties` file located in `src/main/resources`:
 
 ```
-spring.data.mongodb.uri=mongodb+srv://dbfranquiciasapi:0VCPA9JvtGJrMM9V@franquicias-api.b5pvp.mongodb.net/franquicias-db
-spring.data.mongodb.database=franquicias-db
-
 server.port=8080
+server.host=localhost
+
+innerClient.port=8080
+innerClient.host=localhost
+
+spring.datasource.url= jdbc:mysql://bjqegobdnxt5m6icfamy-mysql.services.clever-cloud.com/bjqegobdnxt5m6icfamy?useSSL=false
+spring.datasource.username=uvjl3zuiylny5zc1
+spring.datasource.password=N0e8xAJsVIDICm5wdrPL
+spring.datasource.driver-class-name= com.mysql.cj.jdbc.Driver
+
+
 ```
 
 ## Run Application
