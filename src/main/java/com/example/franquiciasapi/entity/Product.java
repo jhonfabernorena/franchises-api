@@ -3,6 +3,7 @@ package com.example.franquiciasapi.entity;
 import lombok.*;
 import jakarta.persistence.*;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
