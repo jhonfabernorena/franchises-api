@@ -13,7 +13,7 @@ public class Product {
     @Column(name = "id", nullable = false, unique = true)
     private Integer id;
     @Column(name = "p_name", nullable = false)
-    private String nombre;
+    private String name;
     @Column(name = "p_quantity", nullable = false)
     private Integer stock;
     @ManyToOne()

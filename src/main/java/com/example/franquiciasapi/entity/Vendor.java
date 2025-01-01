@@ -19,6 +19,6 @@ public class Vendor {
     @ManyToOne()
     @JoinColumn(name = "s_franchise_id")
     private Franchise franchise;
-    @OneToMany(mappedBy = "tpro_vendor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "vendor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products;
 }

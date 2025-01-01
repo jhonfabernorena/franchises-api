@@ -16,6 +16,6 @@ public class Franchise {
     private String id;
     @Column(name = "f_name", nullable = false)
     private String name;
-    @OneToMany(mappedBy = "tpro_franchise", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "franchise", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Vendor> vendors;
 }
