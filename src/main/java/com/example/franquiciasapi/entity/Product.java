@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tpro_product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 

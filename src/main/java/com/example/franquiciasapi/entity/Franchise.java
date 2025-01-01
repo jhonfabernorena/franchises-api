@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tpro_franchise")
 public class Franchise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 

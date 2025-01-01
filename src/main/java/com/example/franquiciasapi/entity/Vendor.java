@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tpro_vendor")
 public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
