@@ -6,6 +6,8 @@ import com.example.franquiciasapi.repository.VendorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class VendorService {
 
@@ -16,6 +18,10 @@ public class VendorService {
     public VendorService(VendorRepository vendorRepository, FranchiseService franchiseService) {
         this.vendorRepository = vendorRepository;
         this.franchiseService = franchiseService;
+    }
+
+    public Optional<Vendor> findVendorById(Integer id) {
+        return vendorRepository.findById(id);
     }
     
     public Vendor createVendor(Integer franchiseId, Vendor vendor) {

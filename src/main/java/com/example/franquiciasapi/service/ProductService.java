@@ -10,14 +10,21 @@ import org.springframework.stereotype.Service;
 public class ProductService {
 
     private ProductRepository productRepository;
+    private VendorService vendorService;
 
     @Autowired
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, VendorService vendorService) {
         this.productRepository = productRepository;
+        this.vendorService = vendorService;
     }
 
-    public Product addProduct(Product product) {
-        return productRepository.save(product);
+    public Product addProduct(Product product, Integer vendorId) {
+        return vendorService.findVendorById(vendorId)
+            .map(vendor -> {
+                product.setVendor(vendor);
+                return productRepository.save(product);})
+            .orElseThrow(() -> new ResourceNotFoundException("Vendor not found"));
+        
     }
 
     public void deleteProduct(Integer vendorId, Integer productId) {
